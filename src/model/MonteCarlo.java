@@ -1,27 +1,40 @@
 package model;
+
+import java.lang.reflect.Array;
+
 public class MonteCarlo {
 
-    String ticker;
-    Double S0; //initial stock price
-    int simCount; //#of montecarlo sims
+    public String ticker;
+    public Simulation[] simulations;
+
+    private Double currentPrice;
+    private int simCount; //#of  sims
+
+    
 
 
 
-    public MonteCarlo(String tick, Double init, int simcount) {//custom object init
-        ticker = tick;
-        S0 = init;
-        simCount = simcount;
+    public MonteCarlo(String ticker, Double init, int simSize, int steps, double drift, double timeHorizon, double vol) {//custom object init
+        //set object field
+        this.ticker = ticker;
+        currentPrice = init;
+        simCount = simSize;
+        //initiate Simulation Array (columns)
+        simulations = new Simulation[simSize];
+
+        //fill each index of [simulations] with a simulation object
+        for (int x = 0; x < simSize; x++) {
+            simulations[x] = new Simulation(steps, drift, timeHorizon, init, vol);
+        }
+    }
+    
+    //run all simulations
+    public void runAll() {
+        for (int x = 0; x < simCount; x++) {
+            simulations[x].runSim();
+        }
     }
 
-    public MonteCarlo(){ //auto object init
-        ticker = "";
-        S0 = 0.0;
-        simCount = 100;
-    }
 
-   /*
-   public int[] SimsInit(){
-        return([1, 3]);
-    }
-    */ 
+
 }

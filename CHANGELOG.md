@@ -13,3 +13,15 @@
  - Connect to R?
 
  
+ ##JAN 14th 2025
+ - Encapsulated and expanded simulation parameters to object MonteCarlo
+ - Sucessful initiation of 2D array [Simulation][double].
+ - Implemented brownian motion with java Array tools.
+ - Created simple developer methods to test single GBM simulations
+
+ Goals by next commit(soon?)
+ - Use java's R library
+ - implement and LEARN Maven dev tools
+ - implement multithread computation
+ - create write.csv method
+ - optimize computation
