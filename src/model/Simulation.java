@@ -31,18 +31,17 @@ public class Simulation {
     public void runSim () {
         Random random = new Random();
         double dt = overall/((double)n);
-    
+        double sqrtdt = Math.sqrt(dt);
         path[0] = s_0;
 
         for (int t = 1; t < n; t++){
             double dz = random.nextGaussian(); //stochastic randomness
-            path[t] = path[t-1] * Math.exp((mu-(vol*vol)/2)*dt + (vol * Math.sqrt(dt)*dz));
+            path[t] = path[t-1] * Math.exp((mu-(vol*vol)/2)*dt + (vol * sqrtdt * dz));
 
         }
 
     }
 
-    
     //setters.
     public static void setVol(double volitility) {
         if (vol < 0){
@@ -69,8 +68,16 @@ public class Simulation {
         return mu;
     }
 
-    public double vol(){
+    public double getVol(){
         return vol;
+    }
+
+    public double getOverallTime() {
+        return overall;
+    }
+
+    public double getSteps() {
+        return n;
     }
 
     //debug tools

@@ -35,6 +35,11 @@ public class MonteCarlo {
         }
     }
 
+    //getter
+    public int getSimCount() {
+        return this.simCount;
+    }
+
 
 
 }

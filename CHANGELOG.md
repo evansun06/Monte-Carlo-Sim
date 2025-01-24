@@ -13,9 +13,9 @@
  - Connect to R?
 
  
- ##JAN 14th 2025
+ ## JAN 14th 2025
  - Encapsulated and expanded simulation parameters to object MonteCarlo
- - Sucessful initiation of 2D array [Simulation][double].
+ - Sucessful initiation of 2D array `[Simulation][double]`.
  - Implemented brownian motion with java Array tools.
  - Created simple developer methods to test single GBM simulations
 
@@ -25,3 +25,12 @@
  - implement multithread computation
  - create write.csv method
  - optimize computation
+
+ ## JAN 23rd 2025
+ - Added simple JUnit Testing
+ - Added object called CSVWriter which writes simulation data to csv.
+
+ Goals by next commit:
+ - R visualization
+ - User friendly UI
+ - API calls to simplify parametarization?
