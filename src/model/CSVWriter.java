@@ -15,7 +15,7 @@ public class CSVWriter {
     }
 
     public static void main(String[] args) {
-        MonteCarlo mc1 = new MonteCarlo("GOOGL", 189.66, 100, 100, 0.1, 1, 0.5);
+        MonteCarlo mc1 = new MonteCarlo("GOOGL", 189.66, 300, 500, 0.1, 1, 0.5);
         mc1.runAll();
         CSVWriter testWriter = new CSVWriter(mc1.simulations,"src/data/test.csv");
         CSVWriter.simulationsToCSV(mc1.simulations);
@@ -35,11 +35,11 @@ public class CSVWriter {
     //method that sends simulation array into a csv file
     private static void simulationsToCSV(Simulation[]sims){
         int rowLength = sims.length;
-        int columnLength = sims[1].getPath().length;
-        double t = sims[1].getOverallTime();
-        double dt = t/((double)sims[1].getSteps());
+        int columnLength = sims[0].getPath().length;
+        double t = sims[0].getOverallTime();
+        double dt = t/((double)sims[0].getSteps());
 
-        try (FileWriter writer = new FileWriter("src/data/test.csv", false)){
+        try (FileWriter writer = new FileWriter("data/test.csv", false)){
             //Write Column Names
             writer.write("time,");
             for (int x = 1; x <= rowLength; x++) {
@@ -53,7 +53,7 @@ public class CSVWriter {
             //Write Sims by row
             for (int y = 0; y < columnLength; y++){
                 //Write Time 
-                writer.write(String.format("%.2f",(dt*(double)y))+ ",");
+                writer.write(String.format("%.4f",(dt*(double)y))+ ",");
                 //Write Stock Price
                 for (int x = 0; x < rowLength; x++ ){
                     String formatted = String.format("%.2f",sims[x].getPath()[y]);

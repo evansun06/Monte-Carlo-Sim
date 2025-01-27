@@ -34,3 +34,10 @@
  - R visualization
  - User friendly UI
  - API calls to simplify parametarization?
+
+ ## JAN 26th 2025
+ - Added R scripe implimentation
+ 
+ Goals by next commit:
+ - Rigorous testing 
+ - Adding maybe an interface
