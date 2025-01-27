@@ -9,10 +9,9 @@ Currently the UI is very unfriendly. Currently you can run from Simulation.java 
 4. Then go to scripts/analysis and run analysis. (might be sum path bugs).
 5. PNG of visualization will showup in scripts/visuals.
 
-DEMO: 
-- Currently loaded in test.csv is a stock sim of Google with 300 simulations at 500 steps.
-- The visualization is in script/visuals/GOOGL.png
+DEMO: Currently loaded in test.csv is a stock sim of Google with 300 simulations at 500 steps. The visualization is in script/visuals/GOOGL.png
 
+![My Image](scripts/visuals/GOOGL.png)
 
 Thank You!
 
